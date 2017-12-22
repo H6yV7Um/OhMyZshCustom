@@ -25,6 +25,7 @@ git() {
 }
 
 # common alias
+alias dirSize='du -sh'
 alias ll='ls -l'
 alias la='ls -a'
 alias lal='ls -al'
