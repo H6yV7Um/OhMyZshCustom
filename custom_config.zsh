@@ -24,6 +24,14 @@ git() {
     $_real_git "$@"
 }
 
+# alias for git
+alias st="stree"
+alias x="stree"
+
+alias gg='git log --oneline --decorate --graph --all'
+alias gl='git log --oneline --decorate --graph --all'
+export VISUAL="subl -n -w"
+
 # common alias
 alias dirSize='du -sh'
 alias ll='ls -l'
@@ -38,13 +46,6 @@ alias sbp='subl .'
 alias a='atom'
 alias ap='atom .'
 alias reloadOhMyZshConfig="source $HOME/.zshrc"
-
-# alias for git
-alias st="stree"
-alias x="stree"
-
-alias gg='git log --oneline --decorate --graph --all'
-alias gl='git log --oneline --decorate --graph --all'
 
 # the fuck
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
