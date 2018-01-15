@@ -226,3 +226,7 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 # tensorflow
 alias jtf="cd ~/development/codes/ai/tf/"
+
+# cocos2d
+export COCOS2D_ROOT="$HOME/development/codes/cocos2d/cocos2d-x-3.16"
+export PATH="$PATH:$COCOS2D_ROOT/tools/cocos2d-console/bin"
