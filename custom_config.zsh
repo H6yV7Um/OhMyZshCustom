@@ -229,4 +229,22 @@ alias jtf="cd ~/development/codes/ai/tf/"
 
 # cocos2d
 export COCOS2D_ROOT="$HOME/development/codes/cocos2d/cocos2d-x-3.16"
-export PATH="$PATH:$COCOS2D_ROOT/tools/cocos2d-console/bin"
+
+# Add environment variable COCOS_X_ROOT for cocos2d-x
+export COCOS_X_ROOT="$HOME/development/codes/cocos2d"
+export PATH=$COCOS_X_ROOT:$PATH
+
+# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
+export COCOS_CONSOLE_ROOT="$COCOS2D_ROOT/tools/cocos2d-console/bin"
+export PATH=$COCOS_CONSOLE_ROOT:$PATH
+
+# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
+export COCOS_TEMPLATES_ROOT="$COCOS2D_ROOT/templates"
+export PATH=$COCOS_TEMPLATES_ROOT:$PATH
+
+# Add environment variable NDK_ROOT for cocos2d-x
+export NDK_ROOT="$ANDROID_NDK"
+export PATH=$NDK_ROOT:$PATH
+
+# Add environment variable ANDROID_SDK_ROOT for cocos2d-x
+export ANDROID_SDK_ROOT="$ANDROID_HOME"
