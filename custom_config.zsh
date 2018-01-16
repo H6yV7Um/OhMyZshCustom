@@ -254,3 +254,4 @@ export ANDROID_SDK_ROOT="$ANDROID_HOME"
 
 # add imgcat
 alias imgcat=$ZSH_CUSTOM/imgcat.sh
+alias imcat=imgcat
