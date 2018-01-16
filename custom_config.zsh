@@ -116,6 +116,9 @@ epTencent_dev(){
 epDuotai(){
 	networksetup -setautoproxyurl Ethernet $DUO_TAI_PROXY_URL
 }
+wfpTencent_office(){
+    networksetup -setautoproxyurl Wi-Fi $TENCENT_PROXY_URL
+}
 wfpTencent_dev(){
 	networksetup -setautoproxyurl Wi-Fi $TENCENT_PROXY_URL_DEV
 }
