@@ -248,3 +248,6 @@ export PATH=$NDK_ROOT:$PATH
 
 # Add environment variable ANDROID_SDK_ROOT for cocos2d-x
 export ANDROID_SDK_ROOT="$ANDROID_HOME"
+
+# add imgcat
+alias imgcat=$ZSH_CUSTOM/imgcat.sh
