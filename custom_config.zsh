@@ -4,20 +4,24 @@ if [[ -z $_real_git ]];then
     _real_git=$(which git)
 fi
 git() {
-    if [[ ($1 == dcm) || ($1 == dm) || (($1 == svn) && ($2 == dcommit)) ]]
+    if [[ ($1 == 'svn')
+        ||($1 == dcm)
+        || ($1 == dm) 
+        || ($1 == u)
+        || ($1 == up) ]]
     then
-        echo "intercept svn dcommit!"
+        echo "intercept git $1 $2"
         curr_branch=$($_real_git branch | sed -n 's/\* //p')
         if [[ ($curr_branch != master) && ($curr_branch != '(no branch)') ]]
         then
-            echo "Committing from [$curr_branch]; are you sure? [yes/N]"
+            echo "You are now on branch [$curr_branch], continue performing this action? [yes/N]"
             read resp
             if [[ ($resp != yes)]]
             then
                 echo "Abort!"
                 return 2
             else
-                echo "do svn dcommit ......"
+                echo "do git svn $1 $2"
             fi
         fi
     fi
