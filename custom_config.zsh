@@ -14,14 +14,15 @@ git() {
         curr_branch=$($_real_git branch | sed -n 's/\* //p')
         if [[ ($curr_branch != master) && ($curr_branch != '(no branch)') ]]
         then
-            echo "You are now on branch [$curr_branch], continue performing this action? [yes/N]"
+            echo "You are now on branch [$curr_branch], continue performing this action? [y(es)/N]"
             read resp
-            if [[ ($resp != yes)]]
+            if [[ ($resp == yes) 
+                || ($resp == y)]]
             then
+                echo "do git svn $1 $2"
+            else
                 echo "Abort!"
                 return 2
-            else
-                echo "do git svn $1 $2"
             fi
         fi
     fi
