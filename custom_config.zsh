@@ -4,6 +4,7 @@ if [[ -z $_real_git ]];then
     _real_git=$(which git)
 fi
 git() {
+    echo "intercept git command"
     if [[ ($1 == 'svn')
         ||($1 == dcm)
         || ($1 == dm) 
