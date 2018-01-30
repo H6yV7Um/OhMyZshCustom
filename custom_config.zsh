@@ -15,10 +15,10 @@ git() {
         curr_branch=$($_real_git branch | sed -n 's/\* //p')
         if [[ ($curr_branch != master) && ($curr_branch != '(no branch)') ]]
         then
-            echo "You are now on branch [$curr_branch], continue performing this action? [y(es)/N]"
+            echo "You are now on branch [$curr_branch], continue performing this action? [y.a|N]"
             read resp
-            if [[ ($resp == yes) 
-                || ($resp == y)]]
+            if [[ ($resp == y)
+                || ($resp == a) ]]
             then
                 echo "do git svn $1 $2"
             else
