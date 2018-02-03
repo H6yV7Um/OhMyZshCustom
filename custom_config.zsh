@@ -4,6 +4,22 @@ if [[ -z $_real_git ]];then
     _real_git=$(which git)
 fi
 git() {
+    if [[ (($1 == 'svn') && ($2 == 'dcommit'))
+        || ($1 == dcm)
+        || ($1 == dm) ]]
+    then
+        echo "intercept git $1 $2"
+        curr_branch=$($_real_git branch | sed -n 's/\* //p')
+        if [[ ($curr_branch != master) && ($curr_branch != '(no branch)') ]]
+        then
+            echo "You are now on branch [$curr_branch], operation now allowed!"
+            return 2
+        fi
+    fi
+    $_real_git "$@"
+}
+
+_git_old() {
     if [[ ($1 == 'svn')
         ||($1 == dcm)
         || ($1 == dm) 
