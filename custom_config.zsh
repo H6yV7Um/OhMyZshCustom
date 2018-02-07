@@ -133,24 +133,30 @@ wfof(){
 # common proxy
 epTencent_dev(){
 	networksetup -setautoproxyurl Ethernet $TENCENT_PROXY_URL_DEV
+    ns
 }
 epDuotai(){
 	networksetup -setautoproxyurl Ethernet $DUO_TAI_PROXY_URL
+    ns
 }
 wfpTencent_office(){
     networksetup -setautoproxyurl Wi-Fi $TENCENT_PROXY_URL
+    ns
 }
 wfpTencent_dev(){
 	networksetup -setautoproxyurl Wi-Fi $TENCENT_PROXY_URL_DEV
+    ns
 }
 wfpDuotai(){
     networksetup -setautoproxyurl Wi-Fi $DUO_TAI_PROXY_URL
+    ns
 }
 wfpoff(){
     networksetup -setautoproxystate Wi-Fi off
 }
 wfpon(){
     networksetup -setautoproxystate Wi-Fi on
+    ns
 }
 
 # command line proxy
@@ -159,18 +165,21 @@ cmdpDuotai(){
 	export https_proxy=$http_proxy
     export ftp_proxy=$http_proxy
     export all_proxy=$http_proxy
+    ns
 }
 cmdpTencent(){
 	export http_proxy=$TENCENT_PROXY_URL_CMD
 	export https_proxy=$http_proxy
     export ftp_proxy=$http_proxy
     export all_proxy=$http_proxy
+    ns
 }
 cmdpoff(){
 	unset http_proxy
 	unset https_proxy
     unset ftp_proxy
     unset all_proxy
+    ns
 }
 
 # alias for svn
