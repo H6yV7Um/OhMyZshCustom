@@ -214,7 +214,7 @@ alias nb="ndk-build"
 
 # alias for tencent
 alias code_review_tencent='~/development/tools/tencent/code-client-mac/CodeClient_Mac.sh'
-alias jp="cd ~/development/codes/tencent/TTPic/git/dolphin_android_proj/"
+alias jp="cd ~/development/codes/tencent/TTPic/git/android_ttpic_proj/"
 alias js="cd ~/development/codes/tencent/Oscar/git/LifeIsLikeAPlay_Android_proj/"
 alias jq="cd ~/development/codes/tencent/qzone/git/oscar_camera_proj/android"
 alias jsdk="cd ~/development/codes/tencent/TTPic/git/dolphin_android_proj/PtuSdkFromShaka"
