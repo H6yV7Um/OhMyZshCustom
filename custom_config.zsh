@@ -47,7 +47,7 @@ _git_old() {
 
 # alias for git
 alias st="stree"
-alias x="stree"
+alias x="gitx"
 
 alias gg='git log --oneline --decorate --graph --all'
 alias gl='git log --oneline --decorate --graph --all'
