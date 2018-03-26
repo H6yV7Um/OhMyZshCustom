@@ -49,8 +49,8 @@ _git_old() {
 alias st="stree"
 alias x="gitx"
 
-alias gg='git log --oneline --decorate --graph --all'
 alias gl='git log --oneline --decorate --graph --all'
+alias gg="git log --date=format:'%d-%m-%Y %H:%M:%S' --graph --pretty=format:'%h  %cd  %cn  %s'"
 export VISUAL="subl -n -w"
 
 # common alias
