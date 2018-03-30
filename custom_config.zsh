@@ -221,6 +221,8 @@ alias jq="cd ~/development/codes/tencent/qzone/git/oscar_camera_proj/android"
 alias jsdk="cd ~/development/codes/tencent/TTPic/git/dolphin_android_proj/PtuSdkFromShaka"
 alias jd="cd ~/development"
 alias jf="cd ~/development/codes/tencent/ferrari/WeiShi_Android_proj/Ferrari"
+alias auninstall_ptu='adb uninstall com.tencent.ttpic'
+alias auninstall_ptu_dev='adb uninstall com.tencent.ttpic.dev'
 
 # config for rails
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
