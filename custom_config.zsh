@@ -56,6 +56,7 @@ export VISUAL="subl -n -w"
 
 # common alias
 alias dirSize='du -sh'
+alias ds='du -sh'
 alias ll='ls -l'
 alias la='ls -a'
 alias lal='ls -al'
