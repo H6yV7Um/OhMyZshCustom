@@ -51,6 +51,7 @@ alias x="gitx"
 
 alias gl='git log --oneline --decorate --graph --all'
 alias gg="git log --date=format:'%d-%m-%Y %H:%M:%S' --graph --pretty=format:'%C(yellow)%h%Creset %cd %Cgreen%cn%Creset %Cred%d%Creset %s'"
+alias gcolocal_rbmaster="git checkout local;git rebase master"
 
 export VISUAL="subl -n -w"
 
