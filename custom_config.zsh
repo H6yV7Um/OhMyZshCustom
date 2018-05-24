@@ -292,5 +292,8 @@ alias imgcat=$ZSH_CUSTOM/imgcat.sh
 alias imcat=imgcat
 
 # add flutter path
+# use local mirror site in China
+export PUB_HOSTED_URL=https://pub.flutter-io.cn
+export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 export FLUTTER_ROOT="$HOME/development/env/flutter/flutter/"
 export PATH=$FLUTTER_ROOT/bin:$PATH
