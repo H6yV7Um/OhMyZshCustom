@@ -292,5 +292,5 @@ alias imgcat=$ZSH_CUSTOM/imgcat.sh
 alias imcat=imgcat
 
 # add flutter path
-export FLUTTER_ROOT="~/development/env/flutter/flutter/"
+export FLUTTER_ROOT="$HOME/development/env/flutter/flutter/"
 export PATH=$FLUTTER_ROOT/bin:$PATH
