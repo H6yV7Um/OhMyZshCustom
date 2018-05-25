@@ -1,3 +1,4 @@
+# git ####################
 # intercept svn dcommit for non-master branches
 if [[ -z $_real_git ]];then
     # _real_git is not exists
@@ -52,10 +53,11 @@ alias x="gitx"
 alias gl='git log --oneline --decorate --graph --all'
 alias gg="git log --date=format:'%d-%m-%Y %H:%M:%S' --graph --pretty=format:'%C(yellow)%h%Creset %cd %Cgreen%cn%Creset %Cred%d%Creset %s'"
 alias gcolocal_rbmaster="git checkout local;git rebase master"
+# git ####################
 
 export VISUAL="subl -n -w"
 
-# common alias
+# common alias ####################
 alias dirSize='du -sh'
 alias ds='du -sh'
 alias ll='ls -l'
@@ -70,21 +72,24 @@ alias sbp='subl .'
 alias a='atom'
 alias ap='atom .'
 alias reloadOhMyZshConfig="source $HOME/.zshrc"
+alias gp=grep
+# common alias ####################
 
-# the fuck
+# the fuck ####################
 alias fuck='eval $(thefuck $(fc -ln -1 | tail -n 1)); fc -R'
 alias fk='fuck'
+# the fuck ####################
 
-alias gp=grep
-
-op(){
+# mac finder ####################
+alias f="open"
+of(){
 	local currentDir=$(pwd)
 	echo "open in finder: $currentDir"
 	open $currentDir
 }
-alias f="open"
+# mac finder ####################
 
-# adb
+# adb ####################
 alias apl='adb pull'
 adb_push_image() {
     src=$1
@@ -105,13 +110,16 @@ alias adbstart='adb start-server'
 alias adbrestart='adbkill;adbstart;adbstart'
 alias adbwfon="adb shell su -c 'svc wifi enable'"
 alias adbwfoff="adb shell su -c 'svc wifi disable'"
+# adb ####################
 
+# oh my zsh ####################
 export OHMYZSH="$HOME/development/codes/tools/oh-my-zsh"
 alias jom="$HOME/development/codes/tools/OhMyZshCustom"
 # add tools directory
 export PATH="$PATH:$OHMYZSH:."
+# oh my zsh ####################
 
-# network
+# mac network ####################
 net_status(){
 	networksetup -getairportpower $WIFI_INTERFACE
 	/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}'
@@ -184,8 +192,9 @@ cmdpoff(){
     unset all_proxy
     ns
 }
+# mac network ####################
 
-# alias for svn
+# svn ####################
 alias s='svn'
 alias sv='svn'
 alias svs='svn status'
@@ -194,19 +203,15 @@ alias sva='svn add'
 alias svd='svn diff'
 alias svc-m='svn commit -m'
 alias svnrevertall='for FILE in $(svn status); do svn revert "$FILE"; done'
-
-# ruby
-if which rbenv > /dev/null;
-	then eval "$(rbenv init -)";
-fi
+# svn ####################
 
 # start ssh agent
 start_ssh_agent(){
 	eval "$(ssh-agent -s)"
 }
 
+# android ####################
 alias mapping_trace_sh_for_android_shrink=$ANDROID_HOME/tools/proguard/bin/retrace.sh
-
 # add android to PATH
 export ANDROID_HOME="$HOME/development/env/android/android-sdk-macosx"
 export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
@@ -214,8 +219,9 @@ export PATH="$PATH:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools"
 export ANDROID_NDK="$HOME/development/env/android/ndk/android-ndk-r14b"
 export PATH="$PATH:$ANDROID_NDK"
 alias nb="ndk-build"
+# android ####################
 
-# alias for tencent
+# tencent ####################
 alias code_review_tencent='~/development/tools/tencent/code-client-mac/CodeClient_Mac.sh'
 alias jp="cd ~/development/codes/tencent/TTPic/git/android_ttpic_proj/"
 alias js="cd ~/development/codes/tencent/Oscar/git/LifeIsLikeAPlay_Android_proj/"
@@ -225,20 +231,30 @@ alias jd="cd ~/development"
 alias jf="cd ~/development/codes/tencent/ferrari/WeiShi_Android_proj/Ferrari"
 alias auninstall_ptu='adb uninstall com.tencent.ttpic'
 alias auninstall_ptu_dev='adb uninstall com.tencent.ttpic.dev'
+# tencent ####################
 
-# config for rails
+# ruby ####################
+if which rbenv > /dev/null;
+    then eval "$(rbenv init -)";
+fi
+# ruby ####################
+
+# rails ####################
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+# rails ####################
 
+# go ####################
 # set go path
 export GOPATH="$HOME/development/env/go/apps"
-
 # add go apps
 export PATH="$PATH:$GOPATH/bin"
+# go ####################
 
-# jadx
+# jadx ####################
 alias jadx=$HOME/development/tools/jadx-0.6.0/bin/jadx
 alias jadx_gui=$HOME/development/tools/jadx-0.6.0/bin/jadx-gui
+# jadx ####################
 
 # react-native
 alias rn=react-native
@@ -256,11 +272,13 @@ export NCNN_ROOT="$HOME/development/codes/ai/ncnn/ncnn"
 export PATH="$NCNN_ROOT/build/tools:$NCNN_ROOT/build/tools/caffe:$PATH"
 alias jncnn="cd $NCNN_ROOT"
 
+# python ####################
 alias p=python
 alias p2=python2
 alias p3=python3
 # make python -> brew python
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+# python ####################
 
 # tensorflow
 alias jtf="cd ~/development/codes/ai/tf/"
@@ -291,9 +309,12 @@ export ANDROID_SDK_ROOT="$ANDROID_HOME"
 alias imgcat=$ZSH_CUSTOM/imgcat.sh
 alias imcat=imgcat
 
+# flutter ####################
 # add flutter path
+export FLUTTER_ROOT="$HOME/development/env/flutter/flutter/"
+export PATH=$FLUTTER_ROOT/bin:$PATH
 # use local mirror site in China
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-export FLUTTER_ROOT="$HOME/development/env/flutter/flutter/"
-export PATH=$FLUTTER_ROOT/bin:$PATH
+alias flt=flutter
+# flutter ####################
