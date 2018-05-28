@@ -73,6 +73,10 @@ alias a='atom'
 alias ap='atom .'
 alias reloadOhMyZshConfig="source $HOME/.zshrc"
 alias gp=grep
+
+export DEV="$HOME/development"
+alias jdevelopment="cd $DEV"
+alias jcodes="cd $DEV/codes"
 # common alias ####################
 
 # the fuck ####################
