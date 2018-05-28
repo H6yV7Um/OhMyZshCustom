@@ -316,5 +316,5 @@ export PATH=$FLUTTER_ROOT/bin:$PATH
 # use local mirror site in China
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
 export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
-alias flt=flutter
+alias fl=flutter
 # flutter ####################
