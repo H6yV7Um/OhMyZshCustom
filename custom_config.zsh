@@ -311,7 +311,7 @@ alias imcat=imgcat
 
 # flutter ####################
 # add flutter path
-export FLUTTER_ROOT="$HOME/development/env/flutter/flutter/"
+export FLUTTER_ROOT="$HOME/development/env/flutter/flutter"
 export PATH=$FLUTTER_ROOT/bin:$PATH
 # use local mirror site in China
 export PUB_HOSTED_URL=https://pub.flutter-io.cn
