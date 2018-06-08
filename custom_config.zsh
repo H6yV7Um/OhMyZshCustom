@@ -50,6 +50,7 @@ _git_old() {
 alias st="stree"
 alias x="gitx"
 
+alias co='git checkout'
 alias gl='git log --oneline --decorate --graph --all'
 alias gg="git log --date=format:'%d-%m-%Y %H:%M:%S' --graph --pretty=format:'%C(yellow)%h%Creset %cd %Cgreen%cn%Creset %Cred%d%Creset %s'"
 alias gcolocal_rbmaster="git checkout local;git rebase master"
@@ -269,6 +270,7 @@ alias rn=react-native
 alias jai="cd $HOME/development/codes/ai"
 # caffe
 export CAFFE_ROOT="$HOME/development/codes/ai/caffe/caffe"
+export PATH="$CAFFE_ROOT/.build_release/tools:$PATH"
 alias jcaffe="cd $CAFFE_ROOT"
 export PYTHONPATH=$CAFFE_ROOT/python:$PYTHONPATH
 
