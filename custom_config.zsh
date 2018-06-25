@@ -108,6 +108,8 @@ adb_push_image() {
 adbPushImage2Camera() {
     adb_push_image $1 "/mnt/sdcard/DCIM/Camera"
 }
+alias aLayoutBorderEnable='adb shell setprop debug.layout true'
+alias aLayoutBorderDisable='adb shell setprop debug.layout false'
 alias ainstall='adb install'
 alias auninstall='adb uninstall'
 alias adbkill='adb kill-server'
@@ -320,7 +322,7 @@ alias imcat=imgcat
 export FLUTTER_ROOT="$HOME/development/env/flutter/flutter"
 export PATH=$FLUTTER_ROOT/bin:$PATH
 # use local mirror site in China
-export PUB_HOSTED_URL=https://pub.flutter-io.cn
-export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
+# export PUB_HOSTED_URL=https://pub.flutter-io.cn
+# export FLUTTER_STORAGE_BASE_URL=https://storage.flutter-io.cn
 alias fl=flutter
 # flutter ####################
