@@ -108,8 +108,8 @@ adb_push_image() {
 adbPushImage2Camera() {
     adb_push_image $1 "/mnt/sdcard/DCIM/Camera"
 }
-alias aLayoutBorderEnable='adb shell setprop debug.layout true'
-alias aLayoutBorderDisable='adb shell setprop debug.layout false'
+alias adbLayoutBorderEnable='adb shell setprop debug.layout true'
+alias adbLayoutBorderDisable='adb shell setprop debug.layout false'
 alias ainstall='adb install'
 alias auninstall='adb uninstall'
 alias adbkill='adb kill-server'
