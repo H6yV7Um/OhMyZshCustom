@@ -19,7 +19,6 @@ git() {
     fi
     $_real_git "$@"
 }
-
 _git_old() {
     if [[ ($1 == 'svn')
         ||($1 == dcm)
@@ -238,6 +237,30 @@ alias jd="cd ~/development"
 alias jf="cd ~/development/codes/tencent/ferrari/WeiShi_Android_proj/Ferrari"
 alias auninstall_ptu='adb uninstall com.tencent.ttpic'
 alias auninstall_ptu_dev='adb uninstall com.tencent.ttpic.dev'
+
+gcmt(){
+    isTtpicRepo=$(git remote -v | grep 'http://git.code.oa.com/ptuand/android_ttpic_proj.git')
+    if [[ -z $isTtpicRepo ]]
+    then 
+        echo "not ttpic repo, abort!"
+        return
+    fi
+
+    if [[ -z $1 ]]
+    then 
+        echo "commit message is empty, abort!"
+        return
+    fi
+
+    versionCode=$(grep "project.ext.ver_code.*=.*[0-9][0-9][0-9]$" app/build.gradle | tr -cd "[0-9]")
+    if [[ -z $versionCode ]]
+    then 
+        echo "no version code found, abort!"
+        return
+    fi
+    echo "git commit -am \"【ttpic】【${versionCode}】$1\""
+    git commit -am "【ttpic】【${versionCode}】$1"
+}
 # tencent ####################
 
 # ruby ####################
