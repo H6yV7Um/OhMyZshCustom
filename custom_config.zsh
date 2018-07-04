@@ -238,7 +238,7 @@ alias jf="cd ~/development/codes/tencent/ferrari/WeiShi_Android_proj/Ferrari"
 alias auninstall_ptu='adb uninstall com.tencent.ttpic'
 alias auninstall_ptu_dev='adb uninstall com.tencent.ttpic.dev'
 
-gcmt(){
+cmt(){
     isTtpicRepo=$(git remote -v | grep 'http://git.code.oa.com/ptuand/android_ttpic_proj.git')
     if [[ -z $isTtpicRepo ]]
     then 
